@@ -1,0 +1,48 @@
+#
+# Copyright (C) 2017 The Android Open-Source Project
+# Copyright (C) 2019 The LineageOS Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
+on boot
+    # Disable console_suspend to get better logging for kernel crashes
+    write /sys/module/printk/parameters/console_suspend N
+
+    # Change permissions for PowerHAL hint processing nodes
+    chown system system /dev/stune/top-app/schedtune.boost
+    chown system system /dev/cpuset/background/cpus
+    chown system system /dev/cpu_dma_latency
+    chown system system /sys/class/kgsl/kgsl-3d0/devfreq/max_freq
+    chown system system /sys/class/kgsl/kgsl-3d0/devfreq/min_freq
+    chown system system /sys/class/kgsl/kgsl-3d0/force_rail_on
+    chown system system /sys/class/kgsl/kgsl-3d0/force_clk_on
+    chown system system /sys/class/kgsl/kgsl-3d0/idle_timer
+    chown system system /sys/class/devfreq/soc:qcom,gpubw/min_freq
+    chown system system /sys/class/devfreq/soc:qcom,cpu-cpu-ddr-bw/bw_hwmon/hyst_trigger_count
+    chown system system /sys/class/devfreq/soc:qcom,cpu-cpu-ddr-bw/bw_hwmon/hist_memory
+    chown system system /sys/class/devfreq/soc:qcom,cpu-cpu-ddr-bw/bw_hwmon/hyst_length
+    chown system system /sys/class/devfreq/soc:qcom,cpu-cpu-ddr-bw/bw_hwmon/io_percent
+    chown system system /sys/class/devfreq/soc:qcom,cpu-cpu-ddr-bw/bw_hwmon/min_freq
+    chown system system /sys/class/devfreq/soc:qcom,cpu-cpu-ddr-bw/bw_hwmon/sample_ms
+    chown system system /sys/class/devfreq/soc:qcom,cpu-cpu-ddr-bw/min_freq
+    chown system system /sys/class/devfreq/soc:qcom,cpu0-cpu-ddr-lat/min_freq
+    chown system system /sys/class/devfreq/soc:qcom,cpu4-cpu-ddr-lat/min_freq
+
+# If UART is on, enable console_suspend on boot_complete to save power
+on property:sys.boot_completed=1 && property:init.svc.console=running
+    write /sys/module/printk/parameters/console_suspend Y
+
+on property:sys.boot_completed=1
+    # Enable PowerHAL hint processing
+    setprop vendor.powerhal.init 1
