@@ -34,6 +34,9 @@ on early-init
     mount debugfs debugfs /sys/kernel/debug
     chmod 0755 /sys/kernel/debug
 
+    # Enable sched_boost
+    write /proc/sys/kernel/sched_boost 1
+
   # Change ownership of hw_recovery related nodes
     chown system graphics /sys/kernel/debug/dri/0/debug/dump
     chown system graphics /sys/kernel/debug/dri/0/debug/recovery_reg
@@ -467,6 +470,9 @@ on property:persist.vendor.sys.rawdump_copy=0
     write /sys/kernel/dload/emmc_dload 0
 
 on property:sys.boot_completed=1
+    # Disable sched_boost
+    write /proc/sys/kernel/sched_boost 0
+
     write /dev/kmsg "Boot completed "
     #Reset read ahead for dm-0, dm-1 and dm-2 to 512kb
     write /sys/block/dm-0/queue/read_ahead_kb 512
@@ -949,6 +955,9 @@ on charger
     setprop persist.sys.usb.config mass_storage
     load_system_props
     start qcom-post-boot
+
+    # Disable sched_boost
+    write /proc/sys/kernel/sched_boost 0
 
 #add poweroffhandler
 service poweroffhandler /system/vendor/bin/poweroffhandler
