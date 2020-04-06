@@ -7,6 +7,9 @@
 # Power HAL
 /(vendor|system/vendor)/bin/hw/android\.hardware\.power@1\.2-service\.ginkgo u:object_r:hal_power_default_exec:s0
 
+# Thermal HAL
+/(vendor|system/vendor)/bin/hw/android\.hardware\.thermal@2\.0-service\.ginkgo u:object_r:hal_thermal_default_exec:s0
+
 # IR
 /dev/spidev[0-9]\.1          u:object_r:lirc_device:s0
 
