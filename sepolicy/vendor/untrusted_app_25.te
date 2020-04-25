@@ -1,0 +1,8 @@
+allow untrusted_app_25 charger_exec:file { getattr };
+allow untrusted_app_25 adsprpcd_file:dir { getattr };
+allow untrusted_app_25 mnt_vendor_file:dir { search };
+allow untrusted_app_25 vendor_file:file { getattr };
+allow untrusted_app_25 vendor_firmware_file:dir { getattr };
+allow untrusted_app_25 firmware_file:dir { getattr };
+allow untrusted_app_25 firmware_file:filesystem { getattr };
+allow untrusted_app_25 bt_firmware_file:dir { getattr };

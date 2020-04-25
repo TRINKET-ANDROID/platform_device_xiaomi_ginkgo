@@ -1,0 +1,9 @@
+allow init firmware_file:filesystem { getattr };
+allow init bt_firmware_file:filesystem { getattr };
+allow init hal_fingerprint_default:process { ptrace };
+allow init hwservicemanager:binder { transfer };
+allow init vendor_file:file { execute_no_trans };
+allow init vendor_toolbox_exec:file { execute_no_trans };
+allow init default_android_hwservice:hwservice_manager { add };
+allow init hidl_base_hwservice:hwservice_manager { add };
+allow init sysfs:file { write };

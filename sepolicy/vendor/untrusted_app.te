@@ -1,0 +1,8 @@
+allow untrusted_app hal_memtrack_hwservice:hwservice_manager { find };
+allow untrusted_app persist_camera_prop:file { read };
+allow untrusted_app persist_camera_prop:file { open };
+allow untrusted_app persist_camera_prop:file { getattr };
+allow untrusted_app persist_camera_prop:file { map };
+allow untrusted_app app_data_file:file { execute_no_trans };
+allow untrusted_app adsprpcd_file:dir { search };
+allow untrusted_app time_daemon:unix_stream_socket { connectto };

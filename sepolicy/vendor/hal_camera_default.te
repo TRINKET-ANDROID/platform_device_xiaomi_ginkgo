@@ -1,0 +1,13 @@
+allow hal_camera_default default_prop:file { read };
+allow hal_camera_default default_prop:file { open };
+allow hal_camera_default mnt_vendor_file:dir { search };
+allow hal_camera_default mnt_vendor_file:file { read };
+allow hal_camera_default mnt_vendor_file:file { open };
+allow hal_camera_default mnt_vendor_file:file { getattr };
+allow hal_camera_default sysfs:file { read };
+allow hal_camera_default sysfs:file { open };
+allow hal_camera_default sysfs_kgsl:file { read };
+allow hal_camera_default sysfs_kgsl:file { open };
+allow hal_camera_default sysfs_kgsl:file { getattr };
+allow hal_camera_default vendor_shell_exec:file { execute_no_trans };
+allow hal_camera_default vendor_toolbox_exec:file { execute_no_trans };

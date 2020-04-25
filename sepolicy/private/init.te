@@ -1,0 +1,16 @@
+# Allow init to mount wlan kernel module
+allow init vendor_file:file { mounton };
+
+# Allow init to mount light hal service
+allow init vendor_file:file { execute };
+
+# Allow init to mount vendor configs
+allow init vendor_configs_file:file { mounton };
+
+# Allow init to chown/chmod on pseudo files in /sys
+allow init sysfs_type:file { open read setattr };
+
+# Allow init create cgroups
+allow init cgroup:file { create };
+
+permissive init;

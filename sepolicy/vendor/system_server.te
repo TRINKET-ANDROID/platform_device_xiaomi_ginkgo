@@ -1,1 +1,14 @@
 get_prop(system_server, vendor_fp_prop)
+
+allow system_server persist_camera_prop:file { read };
+allow system_server persist_camera_prop:file { open };
+allow system_server persist_camera_prop:file { getattr };
+allow system_server persist_camera_prop:file { map };
+allow system_server vendor_camera_prop:file { read };
+allow system_server vendor_camera_prop:file { open };
+allow system_server vendor_camera_prop:file { map };
+allow system_server vendor_camera_prop:file { getattr };
+allow system_server vendor_default_prop:file { read };
+allow system_server vendor_default_prop:file { open };
+allow system_server vendor_default_prop:file { getattr };
+allow system_server init:binder { call };

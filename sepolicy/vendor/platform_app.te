@@ -1,0 +1,3 @@
+allow platform_app sensors_prop:file { open };
+allow platform_app sensors_prop:file { getattr };
+allow platform_app sensors_prop:file { map };
