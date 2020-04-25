@@ -1,2 +1,23 @@
 allow hal_power_default proc_touchpanel:dir search;
 allow hal_power_default proc_touchpanel:file rw_file_perms;
+allow hal_power_default debugfs:file { write };
+allow hal_power_default debugfs:file { open };
+allow hal_power_default sysfs_devices_system_cpu:file { write };
+allow hal_power_default sysfs:file { read };
+allow hal_power_default sysfs:file { open };
+allow hal_power_default sysfs:file { getattr };
+allow hal_power_default sysfs_kgsl:file { write };
+allow hal_power_default sysfs_kgsl:file { open };
+allow hal_power_default sysfs_kgsl:lnk_file { read };
+allow hal_power_default sysfs_devfreq:dir { search };
+allow hal_power_default sysfs_devfreq:dir { write };
+allow hal_power_default sysfs_devfreq:file { open };
+allow hal_power_default sysfs_devfreq:file { write };
+allow hal_power_default hal_power_default:capability { dac_override };
+allow hal_power_default latency_device:chr_file { write };
+allow hal_power_default latency_device:chr_file { open };
+allow hal_power_default input_device:dir { search };
+allow hal_power_default input_device:chr_file { rw_file_perms };
+
+# To get/set powerhal state property
+set_prop(hal_power_default, power_prop)
