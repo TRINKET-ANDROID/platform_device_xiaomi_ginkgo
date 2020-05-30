@@ -206,7 +206,7 @@ TARGET_USES_PRE_UPLINK_FEATURES_NETMGRD := true
 TARGET_USE_AOSP_SURFACEFLINGER := true
 
 # Security patch level
-VENDOR_SECURITY_PATCH := 2020-01-01
+VENDOR_SECURITY_PATCH := 2020-05-01
 
 # Sepolicy
 include device/qcom/sepolicy/sepolicy.mk
