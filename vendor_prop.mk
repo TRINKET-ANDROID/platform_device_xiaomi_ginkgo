@@ -31,14 +31,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac-aptxadaptive \
+    persist.vendor.bt.enable.splita2dp=true \
+    persist.vendor.qcom.bluetooth.enable.splita2dp=true \
     persist.vendor.bt.aac_frm_ctl.enabled=true \
     vendor.qcom.bluetooth.soc=cherokee
 
 # FM2 and its JNI
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.btstack.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aptxadaptive-aac-ldac \
-    persist.vendor.btstack.enable.splita2dp=true \
     vendor.bluetooth.soc=cherokee
 
 # CNE and DPM
