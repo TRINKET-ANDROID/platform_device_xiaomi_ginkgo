@@ -76,14 +76,6 @@ vendor/lib64/libhdmipassthru.so|882fe62187d282a4c0fe257cd54a7090fe809824
 vendor/lib64/libqtigef.so|886285c40cd45a4f17d3b2e5e909da5a4fd9bf6c
 vendor/lib64/soundfx/libasphere.so|bd48aa3d7cf27bf3b12ce29f429b719383e104fc
 
-# Audio - hardware
-vendor/lib/hw/audio.primary.trinket.so
-vendor/lib/libaudio_log_utils.so
-vendor/lib/libtinycompress_vendor.so
-vendor/lib64/hw/audio.primary.trinket.so
-vendor/lib64/libaudio_log_utils.so
-vendor/lib64/libtinycompress_vendor.so
-
 # Audio ACDB - from violet-user 9 PKQ1.181203.001 9.7.4 release-keys
 vendor/etc/acdbdata/IDP/IDP_Bluetooth_cal.acdb|9227eef7533d7d0e50f0fb436aea674e9c64a10d
 vendor/etc/acdbdata/IDP/IDP_Codec_cal.acdb|2c3ba336fd6a852619892c1627fead53d84ebc25
