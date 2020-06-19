@@ -1049,3 +1049,6 @@ service vendor.audio-hal-2-0 /vendor/bin/hw/android.hardware.audio@2.0-service
 
 service iop-hal-2-0 /system/bin/true
     disabled
+
+service vendor.mlshal-1-0 /system/bin/true
+    disabled
