@@ -209,11 +209,11 @@
       "ResetOnInit": true
     },
     {
-      "Name": "SchedBoost",
-      "Path": "/proc/sys/kernel/sched_boost",
+      "Name": "SchedFeatures",
+      "Path": "/sys/kernel/debug/sched_features",
       "Values": [
-        "1",
-        "0"
+        "NO_ENERGY_AWARE",
+        "ENERGY_AWARE"
       ],
       "ResetOnInit": true
     },
@@ -434,9 +434,9 @@
     },
     {
       "PowerHint": "LAUNCH",
-      "Node": "SchedBoost",
+      "Node": "SchedFeatures",
       "Duration": 5000,
-      "Value": "1"
+      "Value": "NO_ENERGY_AWARE"
     },
     {
       "PowerHint": "LAUNCH",
@@ -524,9 +524,9 @@
     },
     {
       "PowerHint": "CAMERA_LAUNCH",
-      "Node": "SchedBoost",
+      "Node": "SchedFeatures",
       "Duration": 1000,
-      "Value": "1"
+      "Value": "NO_ENERGY_AWARE"
     },
     {
       "PowerHint": "CAMERA_LAUNCH",
@@ -581,6 +581,12 @@
       "Node": "CPUBWIOPercent",
       "Duration": 0,
       "Value": "80"
+    },
+    {
+      "PowerHint": "CAMERA_SHOT",
+      "Node": "SchedFeatures",
+      "Duration": 1000,
+      "Value": "NO_ENERGY_AWARE"
     },
     {
       "PowerHint": "CAMERA_SHOT",
