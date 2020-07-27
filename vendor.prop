@@ -147,6 +147,9 @@ vendor.hw.fm.init=0
 # FRP
 ro.frp.pst=/dev/block/bootdevice/by-name/frp
 
+# Fwk detect
+ro.vendor.qti.va_aosp.support=1
+
 # IOP
 vendor.iop.enable_uxe=0
 vendor.iop.enable_prefetch_ofr=0
